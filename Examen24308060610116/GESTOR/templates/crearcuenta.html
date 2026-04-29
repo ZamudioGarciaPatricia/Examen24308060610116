@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <h3>⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹</h3>
+
+    <div class="card bg-danger bg-opacity-25 border-0 w-75 p-4 shadow-none">
+        <div class="card-body">
+            <h5 class="card-title text-black fw-bold text-center mb-4">
+                CREAR UNA CUENTA ES EL PRIMER PASO PARA GESTIONAR TU VIDA
+            </h5>
+            <form class="row g-3" method="POST" action="/creacuenta">
+                <div class="col-md-12">
+                    <label class="form-label">Username</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" name="user" required>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label text-black fw-bold">Registra tu Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label text-black fw-bold">Tu contraseña</label>
+                    <input type="password" name="secreto" class="form-control" required>
+                    <div class="form-text text-black small">Mínimo 8 caracteres, signos y mayúsculas.</div>
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-danger w-100">BIENVENIDO DE NUEVO</button>
+                </div>
+                <p><a href="/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">volver al inicio</a></p>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

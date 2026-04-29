@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Tareas{% endblock %}
+
+{% block content %}
+<nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">NOMBRE DEL USUARIO /aun sin funcionar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Acerca de</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mas opciones
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
+                <li>
+                <hr class="dropdown-divider">
+                </li>
+            </ul>
+            </li>
+        </ul>
+
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            
+            <div class="card bg-danger-subtle text-dark border-0 shadow-none">
+                
+                <div class="card-header border-0 bg-transparent pt-4">
+                    <h3 class="text-center fw-bold">Mi TO-DO LIST </h3>
+                </div>
+
+                <div class="card-body">
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" placeholder="añade tareas ">
+                        <button class="btn btn-dark">Añadir</button>
+                    </div>
+
+                    <div class="p-3 mb-2 bg-white rounded d-flex align-items-center justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="tarea1">
+                            <label class="form-check-label fw-medium" for="tarea1">
+                                miau miau
+                            </label>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                Opciones
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Editar tarea</a></li>
+                                <li><a class="dropdown-item" href="#">Editar fecha</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#">Borrar tarea</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

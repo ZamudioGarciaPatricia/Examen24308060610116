@@ -1,0 +1,30 @@
+"""
+Aplicación de ejemplo: Gestor de tareas con MongoDB y Python usando las funcionalidades que nos enseño el profe y el archivode moodle
+adaptandolo poco a poco
+"""
+
+from pymongo import MongoClient
+from datetime import datetime
+
+class GestorTareas:
+    def __init__(self, uri="mongodb://localhost:27017/"): 
+        self.cliente = MongoClient(uri, serverSelectionTimeoutMS=2000)
+        self.db = self.cliente['24308060610116']
+        self.usuarios = self.db['usuarios']
+        self.usuarios.create_index("email", unique=True)
+
+    def crear_usuario(self, user, email, secreto):
+        try:
+            self.usuarios.insert_one({
+                "user": user,
+                "email": email,
+                "secreto": secreto,
+                "fecha_registro": datetime.now()
+            })
+            return True
+        except Exception as e:
+            print(f"Error al crear: {e}")
+            return False
+
+    def obtener_usuario_por_email(self, email):
+        return self.usuarios.find_one({"email": email})

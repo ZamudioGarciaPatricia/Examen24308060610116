@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio de Sesión{% endblock %}
+
+{% block content %}
+<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <h3>⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹</h3>
+
+    <div class="card bg-danger bg-opacity-25 border-0 w-75 p-4 shadow-none">
+        <div class="card-body">
+            <h5 class="card-title text-black fw-bold text-center mb-4">
+                NOS ALEGRA VERTE DE NUEVO =D
+            </h5>
+
+            <form class="row g-3" action="/iniciasesion" method="POST">
+                <div class="col-12 mb-3">
+                    <label class="form-label text-black fw-bold">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label class="form-label text-black fw-bold">Tu contraseña</label>
+                    <input type="password" name="secreto" class="form-control" required>
+                </div>
+
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-danger w-100">ACCEDER</button>
+                </div>
+                <p><a href="/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">volver al inicio</a></p>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
